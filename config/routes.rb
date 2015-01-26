@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'departments#index'
+  resources :departments
+  resources :expenses
+  resources :members
+  resources :tax_records
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

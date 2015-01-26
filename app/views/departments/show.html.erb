@@ -1,0 +1,18 @@
+<h1><%= @department.name %></h1>
+<hr />
+
+<div class='row'>
+  <div class='large-4 columns'>
+    <%= render 'expenses/index', expenses: @department.expenses %>
+  </div>
+
+  <div class='large-4 columns'>
+    <%= render 'members/index', members: @department.members %>
+  </div>
+
+  <div class='large-4 columns'>
+    <%= render 'tax_records/index', tax_records: @department.tax_records %>
+  </div>
+</div>
+
+<p class='text-center'><%= Time.now %></p>

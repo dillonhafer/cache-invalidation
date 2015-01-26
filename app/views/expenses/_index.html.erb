@@ -1,0 +1,7 @@
+<% cache(bia_cache_key_for(:expenses)) do %>
+<p class='text-center'><%= Time.now %></p>
+<ul class="pricing-table">
+  <li class="title">Expenses</li>
+  <%= render expenses %>
+</ul>
+<% end %>

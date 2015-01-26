@@ -1,0 +1,7 @@
+<% cache(bia_cache_key_for(:tax_records)) do %>
+<p class='text-center'><%= Time.now %></p>
+<ul class="pricing-table">
+  <li class="title">Tax Records</li>
+  <%= render tax_records %>
+</ul>
+<% end %>
