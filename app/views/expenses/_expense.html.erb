@@ -1,3 +1,6 @@
-<% cache(expense) do %>
-<li class="bullet-item"><%= expense.name %></li>
+<% cache([expense,expense.location]) do %>
+<li class="bullet-item">
+  <%= expense.name %><br />
+  <%= expense.location.name %>
+</li>
 <% end %>
