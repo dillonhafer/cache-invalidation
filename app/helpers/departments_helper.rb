@@ -1,7 +1,6 @@
 module DepartmentsHelper
   def bia_cache_key_for(relationship)
-    count          = @department.send(relationship).count
-    max_updated_at = @department.send(relationship).maximum(:updated_at).try(:utc).try(:to_s, :number)
-    "dept/#{@department.id}/#{relationship}/all-#{count}-#{max_updated_at}"
+    collection_cache_key = @department.send(relationship).collection_cache_key
+    "dept/#{@department.id}/#{relationship}/all-#{collection_cache_key}"
   end
 end
