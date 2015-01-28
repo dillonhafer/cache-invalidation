@@ -5,6 +5,6 @@ class DepartmentsController < ApplicationController
   end
 
   def show
-    @department = Department.includes(:members, :tax_records, :expenses).find(params[:id])
+    @department = Department.find(params[:id])
   end
 end
