@@ -15,4 +15,20 @@
   </div>
 </div>
 
+<hr />
 <p class='text-center'><%= Time.now %></p>
+
+<div class='large-4 columns'>
+  <%= form_for(Location.first) do |f| %>
+  <div class='row'>
+    <div class='large-8 columns'>
+      <%= f.label :name, "Test the location change" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class='large-4 columns'>
+      <br />
+      <%= f.submit 'Update', class: 'tiny button radius' %>
+    </div>
+  </div>
+  <% end %>
+</div>
