@@ -3,7 +3,7 @@
 
 <div class='row'>
   <div class='large-4 columns'>
-    <%= render 'expenses/index', expenses: @department.expenses %>
+    <%= render 'expenses/index', expenses: @department.expenses.includes(:location) %>
   </div>
 
   <div class='large-4 columns'>
