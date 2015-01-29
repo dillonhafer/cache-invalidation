@@ -1,28 +1,16 @@
-== README
+== Context
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We have a show page for a model (Department). That model has several has_many relationships (Item) that get showed on the model's show page,
+like a dashboard. The has_many relationships are rendered by two levels of partials which each are cached: an index
+partial for each relationship that loops through the related items, and the show partial for each individual related items.
+These related items (Item) also belongs_to another another model (Location).
 
-Things you may want to cover:
+== Problem
 
-* Ruby version
+We have an issue where a name change on a related item's belongs_to (Location) doesn’t get displayed on the Department’s show page.
+This is due to the cache keys at the index level. How do we allow updated information to propagate from the Item's other belongs_to
+model (Location) to the department's show page so that it is displayed? We are always mindful of performance.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+== Solution
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
