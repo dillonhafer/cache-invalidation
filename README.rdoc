@@ -16,8 +16,9 @@ model (*Location*) to the *Department*'s show page so that it is displayed? We a
 As we look at our cache key, we notice it's based on the maximum updated time of our *Item* model, and we take no account for its other
 relationships.
 
-+def bia_cache_key_for(type)
+#
+def bia_cache_key_for(type)
   count          = @department.send(type).count
   max_updated_at = @department.send(type).maximum(:updated_at).try(:utc).try(:to_s, :number)
   ".../dept/#{@department.id}/#{...}/#{type}/all-#{count}-#{max_updated_at}"
-end+
+end
