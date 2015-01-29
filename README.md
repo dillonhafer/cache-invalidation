@@ -56,11 +56,11 @@ end
 
 ## Action
 
-With everything expiring properly, (except for our one stubbon model), we can now address the specific case of the **Item**'s cache key.
+With everything expiring properly, (except for our one stubborn model), we can now address the specific case of the **Item**'s cache key.
 We know we can't simply look at the update_at field on our Item, becasue we need to know if its **Location** has been updated as well.
 In this case we need to know the maximum update_at field on both the **Item** *AND* its **Location**. Here we aren't able to use the SQL
-function ```MAX()``, but to get the max value of our updated_at field for an **Item** we can simply order by ```updated_at DESC``` and limit
-the query to the first result ```LIMIT 1```. The reason for sorting this way is because we can now join this row with its **Location**.
+function `MAX()`, but to get the max value of our updated_at field for an **Item** we can simply order by `updated_at DESC` and limit
+the query to the first result `LIMIT 1`. The reason for sorting this way is because we can now join this row with its **Location**.
 This will give us one row with two dates: `items.updated_at` and `locations.updated_at`. Now all we have to do is pick the latest date:
 
 
