@@ -78,4 +78,8 @@ class Item < ActiveRecord::Base
 end
 ```
 
+The above method still only has to make two queries two find the count and the updated_at time, providing a very performant way to determine
+a complicated cache key.
 
+And now our helper method will use this method only for our **Item** model, thus giving us a very flexible way to invalidate
+our cache keys.
