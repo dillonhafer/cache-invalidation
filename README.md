@@ -1,3 +1,5 @@
+[https://ava-cache.herokuapp.com]
+
 ## Context
 
 We have a show page for a model (**Department**). That model has several has_many relationships (**Item**) that get showed on the model's show page,
