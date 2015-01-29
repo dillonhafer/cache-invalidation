@@ -1,4 +1,4 @@
-[https://ava-cache.herokuapp.com]
+https://ava-cache.herokuapp.com
 
 ## Context
 
