@@ -25,3 +25,4 @@ def bia_cache_key_for(type)
   max_updated_at = @department.send(type).maximum(:updated_at).try(:utc).try(:to_s, :number)
   ".../dept/#{@department.id}/#{...}/#{type}/all-#{count}-#{max_updated_at}"
 end
+```
